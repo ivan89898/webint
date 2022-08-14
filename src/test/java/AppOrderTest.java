@@ -31,7 +31,7 @@ public class AppOrderTest {
     }
 
     @Test
-    void ShouldTestV1() throws InterruptedException {
+    void ShouldTestV1() {
         driver.get("http://localhost:9999");
         List<WebElement> inputs = driver.findElements(By.tagName("input"));
         inputs.get(0).sendKeys("Вася");
