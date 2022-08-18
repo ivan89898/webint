@@ -15,7 +15,6 @@ public class AppOrderTest {
 
     @BeforeEach
     void setup() {
-        driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -37,7 +36,7 @@ public class AppOrderTest {
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.className("button__text")).click();
         String expected = "  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-        String actual = driver.findElement(By.cssSelector("#root > div > div")).getText();
+        String actual = driver.findElement(By.className("paragraph")).getText();
         Assertions.assertEquals(expected, actual);
     }
 }
